@@ -6,7 +6,7 @@
       <div class="flex items-center space-x-6">
         <!-- Logo -->
         <div class="flex items-center space-x-2">
-          <img src="/logo.png" alt="Logo" class="h-14 w-14" />
+          <img src="/logo.png" alt="Logo" class="h-16 w-16" />
         </div>
         <!-- Opciones principales -->
         <nav class="flex items-center space-x-6 text-gray-700">
@@ -36,6 +36,5 @@ import { ref } from "vue";
 </script>
 
 <style scoped>
-/* Importar FontAwesome */
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
+
 </style>
