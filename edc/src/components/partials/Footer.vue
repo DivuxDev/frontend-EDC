@@ -1,8 +1,9 @@
 <template>
-  <footer class="app-footer">
-    <p>&copy; 2024 Mi Aplicación. Todos los derechos reservados.</p>
+  <footer class="bg-gray-800 text-white p-4 text-center">
+    <p>© 2024 Mi Sitio Web. Todos los derechos reservados.</p>
   </footer>
 </template>
+
 
 <script lang="ts">
 import { defineComponent } from 'vue';
@@ -13,13 +14,5 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.app-footer {
-  background-color: #222;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
+
 </style>

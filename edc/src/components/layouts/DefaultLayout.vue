@@ -23,13 +23,5 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.default-layout {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-.content {
-  flex: 1;
-  padding: 1rem;
-}
+
 </style>

@@ -1,31 +1,41 @@
 <template>
-  <header class="app-header">
-    <nav>
-      <ul>
-        <li><router-link to="/">Inicio</router-link></li>
-        <li><router-link to="/about">Acerca de</router-link></li>
-      </ul>
-    </nav>
+  <header class="bg-blue-50 py-3 px-6 shadow-md">
+    <div class="mx-5 flex justify-between items-center">
+
+      <!-- Izquierda: Logo + Opciones principales -->
+      <div class="flex items-center space-x-6">
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+          <img src="/logo.png" alt="Logo" class="h-14 w-14" />
+        </div>
+        <!-- Opciones principales -->
+        <nav class="flex items-center space-x-6 text-gray-700">
+          <div class="flex items-center space-x-1 cursor-pointer">
+            <i class="fas fa-search"></i>
+            <span>Buscar cuidadores</span>
+          </div>
+          <div class="flex items-center space-x-1 cursor-pointer">
+            <i class="fas fa-briefcase"></i>
+            <span>Hazte cuidador</span>
+          </div>
+        </nav>
+      </div>
+
+      <!-- Derecha: Opciones secundarias -->
+      <div class="flex items-center space-x-4 text-gray-700">
+        <a href="#">Inicio Sesión</a>
+        <a href="#">Registrarse</a>
+      </div>
+
+    </div>
   </header>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  name: 'Header',
-});
+<script setup>
+import { ref } from "vue";
 </script>
 
 <style scoped>
-.app-header {
-  background-color: #333;
-  color: white;
-  padding: 1rem;
-}
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 1rem;
-}
+/* Importar FontAwesome */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
 </style>
