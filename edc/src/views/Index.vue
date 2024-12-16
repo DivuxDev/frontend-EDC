@@ -1,12 +1,12 @@
 <template>
   <div>
 
-    <div class="bg-[url('/buscador.png')] bg-no-repeat bg-center bg-cover p-20">
+    <div class="bg-[url('/buscador.png')] bg-no-repeat bg-center bg-cover md:p-20">
 
-      <h1 class="text-center text-5xl text-white font-bold">El cuidado que necesitas, más cerca de lo que imaginas.</h1>
+      <h1 class="text-center text-5xl text-white font-bold md:p-0 p-6">El cuidado que necesitas, más cerca de lo que imaginas</h1>
       <h2 class="text-center mt-3 text-4xl text-white">Encuentra al cuidador ideal</h2>
 
-      <div class="bg-blue-100 p-8 rounded-lg shadow-lg max-w-5xl mx-auto mt-5">
+      <div class="bg-blue-100 p-8 md:rounded-lg shadow-lg max-w-5xl mx-auto mt-5">
         <!-- Título -->
         <p class="text-gray-800 text-xl font-bold mb-6 text-center">
           ¿Qué tipo de cuidado necesitas?
@@ -47,8 +47,6 @@
 
   </div>
 </template>
-
-<style></style>
 
 <script setup>
 
