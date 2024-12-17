@@ -1,3 +1,9 @@
+<!--
+  NOTA: Falta hacer un poco mejor media queries, y hacer que al tener sesión iniciada, salga imagen de pérfil
+        Poner un poco más chulo el menu desplegable para pantallas pequeñas
+  GUELEBIXO :<
+-->
+
 <template>
   <header class="bg-blue-50 py-3 px-6 shadow-md">
     <div class="mx-5 flex justify-between items-center">
@@ -5,7 +11,9 @@
       <div class="flex items-center space-x-6">
         <!-- Logo -->
         <div class="flex items-center space-x-2">
-          <img src="/logo.png" alt="Logo" class="h-16 w-16" />
+          <a href="/">
+            <img src="/logo.png" alt="Logo" class="h-16 w-16 cursor-pointer" />
+          </a>
         </div>
         <!-- Opciones principales (Solo visible en tamaños medianos y grandes) -->
         <nav class="hidden md:flex items-center space-x-6 text-gray-700">
@@ -64,5 +72,4 @@ const toggleMenu = () => {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
