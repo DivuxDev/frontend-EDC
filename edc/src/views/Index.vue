@@ -10,7 +10,7 @@
 
 <template>
   <div>
-    <div class="bg-[url('/buscador.png')] bg-no-repeat bg-center bg-cover md:p-20">
+    <section class="bg-[url('/buscador.png')] bg-no-repeat bg-center bg-cover md:p-20">
       <main>
         <!-- Encabezados -->
         <h1 class="text-center text-5xl text-white font-bold md:p-0 p-6">
@@ -46,10 +46,10 @@
           </div>
         </div>
       </main>
-    </div>
+    </section>
 
     <!-- Sección de Información -->
-  <!-- NOTA: seguro que hacer card???, puede quedar repetitivo con los servicios de arriba -->
+    <!-- NOTA: seguro que hacer card???, puede quedar repetitivo con los servicios de arriba -->
     <section class="px-4 py-10 md:px-12 lg:px-20 bg-gray-50">
       <h2 class="text-center text-4xl font-bold text-gray-800 mb-10">Servicios de cuidado adaptadas a ti</h2>
 
@@ -73,11 +73,58 @@
       </div>
     </section>
 
-    <!-- Ideas para meter aqui_
-      Reseñas de personas
-      Pequeñas cards con tips de seguridad u algo así
-      Pequeñas cards con steps sobre como usar la app
-     -->
+    <!-- Sección de pasos -->
+    <section class="px-4 py-10 md:px-12 lg:px-20 bg-gray-50">
+      <h2 class="text-center text-4xl font-bold text-gray-800 mb-10">
+        Tres simples pasos para encontrar el cuidador ideal
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div class="relative flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-xl">
+          <div
+            class="absolute -top-6 flex items-center justify-center bg-blue-500 text-white w-20 h-20 rounded-full shadow-lg">
+            <i class="fas fa-search text-4xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mt-10 mb-2">1. Buscar</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Explora perfiles y lee reseñas verificadas de cuidadores cerca de ti. Encuentra al profesional que mejor se
+            adapte a tus necesidades y preferencias.
+          </p>
+        </div>
+
+        <div class="relative flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-xl">
+          <div
+            class="absolute -top-6 flex items-center justify-center bg-blue-500 text-white w-20 h-20 rounded-full shadow-lg">
+            <i class="fas fa-users text-4xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mt-10 mb-2">2. Contactar</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Ponte en contacto directamente con los cuidadores para resolver tus dudas y coordinar los detalles. No
+            necesitas pagar ni reservar a través de la plataforma.
+          </p>
+        </div>
+
+        <div class="relative flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-xl">
+          <div
+            class="absolute -top-6 flex items-center justify-center bg-blue-500 text-white w-20 h-20 rounded-full shadow-lg">
+            <i class="fas fa-smile-beam text-4xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mt-10 mb-2">3. Relájate</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Confía en nuestro equipo de soporte para garantizar que todo salga bien. Estamos aquí para ayudarte en cada
+            paso, asegurando una experiencia tranquila y segura.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!--Scción de reseñas de personas-->
+    <section>
+
+    </section>
+
 
 
   </div>
