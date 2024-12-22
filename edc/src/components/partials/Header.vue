@@ -36,8 +36,8 @@
         </button>
         <!-- Opciones secundarias (Solo visible en tamaños medianos y grandes) -->
         <div class="hidden md:flex items-center space-x-4 text-gray-700">
-          <a href="#">Inicio Sesión</a>
-          <a href="#">Registrarse</a>
+          <a href="/login">Inicio Sesión</a>
+          <a href="/register">Registrarse</a>
         </div>
       </div>
     </div>
