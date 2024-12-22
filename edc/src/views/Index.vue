@@ -10,6 +10,7 @@
 
 <template>
   <div>
+
     <section class="bg-[url('/buscador.png')] bg-no-repeat bg-center bg-cover md:p-20">
       <main>
         <!-- Encabezados -->
@@ -79,11 +80,11 @@
         Tres simples pasos para encontrar el cuidador ideal
       </h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 mt-20">
 
         <div class="relative flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-xl">
           <div
-            class="absolute -top-6 flex items-center justify-center bg-blue-500 text-white w-20 h-20 rounded-full shadow-lg">
+            class="absolute -top-10 flex items-center justify-center bg-blue-500 text-white w-20 h-20 rounded-full shadow-lg">
             <i class="fas fa-search text-4xl"></i>
           </div>
           <h3 class="text-xl font-bold text-gray-800 mt-10 mb-2">1. Buscar</h3>
@@ -95,7 +96,7 @@
 
         <div class="relative flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-xl">
           <div
-            class="absolute -top-6 flex items-center justify-center bg-blue-500 text-white w-20 h-20 rounded-full shadow-lg">
+            class="absolute -top-10 flex items-center justify-center bg-blue-500 text-white w-20 h-20 rounded-full shadow-lg">
             <i class="fas fa-users text-4xl"></i>
           </div>
           <h3 class="text-xl font-bold text-gray-800 mt-10 mb-2">2. Contactar</h3>
@@ -107,11 +108,12 @@
 
         <div class="relative flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-xl">
           <div
-            class="absolute -top-6 flex items-center justify-center bg-blue-500 text-white w-20 h-20 rounded-full shadow-lg">
+            class="absolute -top-10 flex items-center justify-center bg-blue-500 text-white w-20 h-20 rounded-full shadow-lg">
             <i class="fas fa-smile-beam text-4xl"></i>
           </div>
           <h3 class="text-xl font-bold text-gray-800 mt-10 mb-2">3. Relájate</h3>
           <p class="text-gray-600 leading-relaxed">
+            Permanece en contacto con fotos y mensajes.
             Confía en nuestro equipo de soporte para garantizar que todo salga bien. Estamos aquí para ayudarte en cada
             paso, asegurando una experiencia tranquila y segura.
           </p>
@@ -120,17 +122,59 @@
       </div>
     </section>
 
-    <!--Scción de reseñas de personas-->
-    <section>
+    <!-- Sección de reseñas -->
+    <section class="px-4 py-10 md:px-12 lg:px-20 bg-gray-50">
+      <h2 class="text-center text-4xl font-bold text-gray-800 mb-8">
+        Lo que dicen nuestros clientes
+      </h2>
 
+      <div class="relative max-w-4xl mx-auto">
+        <!-- Contenedor de reseñas -->
+        <div class="flex items-center bg-white p-8 rounded-lg shadow-lg" :key="currentReview">
+          <!-- Imagen / icono -->
+          <div class="flex items-center justify-center bg-gray-300 text-white w-28 h-28 rounded-full mr-6">
+            <i class="fas fa-user text-4xl"></i>
+          </div>
+
+          <!-- <img :src="reviews[currentReview].image" :alt="`Foto de ${reviews[currentReview].name}`"
+            class="w-28 h-28 rounded-full shadow-md mr-6" /> -->
+
+          <!-- Contenido de la reseña -->
+          <div class="flex flex-col">
+            <!-- Nombre del cliente -->
+            <p class="text-gray-800 font-bold mb-2">{{ reviews[currentReview].name }}</p>
+
+            <!-- Indicador de estrellas -->
+            <div class="flex items-center mb-4 text-yellow-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+
+            <!-- Texto -->
+            <blockquote class="text-gray-600 italic leading-relaxed">
+              "{{ reviews[currentReview].quote }}"
+            </blockquote>
+          </div>
+        </div>
+
+        <!-- Indicadores -->
+        <div class="flex justify-center mt-6 space-x-2">
+          <span v-for="(review, index) in reviews" :key="index" class="w-3 h-3 rounded-full cursor-pointer" :class="{
+            'bg-blue-500': index === currentReview,
+            'bg-gray-300': index !== currentReview,
+          }" @click="changeReview(index)"></span>
+        </div>
+      </div>
     </section>
-
-
 
   </div>
 </template>
 
 <script setup>
+import { ref, onMounted } from "vue";
 /*Arrays temporales, podemos crear una entidad (CONFIG_SERVICIOS) y guardar ahí los servicios, y al cargar la pagina por primera vez
 guardarlos en la store o alguna movida así, aunque tambien lo podemos dejar hardcodeado como buenos gordos
 */
@@ -157,4 +201,40 @@ const services = [
     icon: "fas fa-hospital"
   },
 ];
+
+const reviews = ref([
+  {
+    // image: "/a.jpg",
+    quote:
+      "El servicio fue increíble. Encontramos un cuidador que se convirtió en parte de nuestra familia.",
+    name: "María L.",
+  },
+  {
+    // image: "/a.jpg",
+    quote:
+      "Nunca había encontrado algo tan fácil. Atendi2 hizo todo el proceso tan cómodo y seguro.",
+    name: "Carlos M.",
+  },
+  {
+    // image: "/a.jpg",
+    quote:
+      "El soporte que recibimos fue excepcional. Sin duda, volveremos a usar el servicio.",
+    name: "Luisa F.",
+  },
+]);
+
+// Estado actual de la reseña
+const currentReview = ref(0);
+
+// Función para cambiar reseña
+const changeReview = (index) => {
+  currentReview.value = index;
+};
+
+// Ciclo automático
+onMounted(() => {
+  setInterval(() => {
+    currentReview.value = (currentReview.value + 1) % reviews.value.length;
+  }, 5000);
+});
 </script>
