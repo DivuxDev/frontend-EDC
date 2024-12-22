@@ -81,7 +81,7 @@
       </h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 mt-20">
-
+        <!-- Paso 1 -->
         <div class="relative flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-xl">
           <div
             class="absolute -top-10 flex items-center justify-center bg-blue-500 text-white w-20 h-20 rounded-full shadow-lg">
@@ -94,6 +94,7 @@
           </p>
         </div>
 
+        <!-- Paso 2 -->
         <div class="relative flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-xl">
           <div
             class="absolute -top-10 flex items-center justify-center bg-blue-500 text-white w-20 h-20 rounded-full shadow-lg">
@@ -102,11 +103,14 @@
           <h3 class="text-xl font-bold text-gray-800 mt-10 mb-2">2. Contactar</h3>
           <p class="text-gray-600 leading-relaxed">
             Ponte en contacto directamente con los cuidadores para resolver tus dudas y coordinar los detalles. No
-            necesitas pagar ni reservar a través de la plataforma.
+            necesitas
+            pagar ni reservar a través de la plataforma.
           </p>
         </div>
 
-        <div class="relative flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-xl">
+        <!-- Paso 3 -->
+        <div
+          class="relative flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-xl md:col-span-2 md:col-start-1 lg:col-span-1 lg:col-start-auto">
           <div
             class="absolute -top-10 flex items-center justify-center bg-blue-500 text-white w-20 h-20 rounded-full shadow-lg">
             <i class="fas fa-smile-beam text-4xl"></i>
@@ -115,14 +119,13 @@
           <p class="text-gray-600 leading-relaxed">
             Permanece en contacto con fotos y mensajes.
             Confía en nuestro equipo de soporte para garantizar que todo salga bien. Estamos aquí para ayudarte en cada
-            paso, asegurando una experiencia tranquila y segura.
+            paso,
+            asegurando una experiencia tranquila y segura.
           </p>
         </div>
-
       </div>
     </section>
 
-    <!-- Sección de reseñas -->
     <section class="px-4 py-10 md:px-12 lg:px-20 bg-gray-50">
       <h2 class="text-center text-4xl font-bold text-gray-800 mb-8">
         Lo que dicen nuestros clientes
@@ -130,17 +133,16 @@
 
       <div class="relative max-w-4xl mx-auto">
         <!-- Contenedor de reseñas -->
-        <div class="flex items-center bg-white p-8 rounded-lg shadow-lg" :key="currentReview">
+        <div class="flex flex-col sm:flex-row items-center bg-white p-8 rounded-lg shadow-lg relative"
+          :key="currentReview">
           <!-- Imagen / icono -->
-          <div class="flex items-center justify-center bg-gray-300 text-white w-28 h-28 rounded-full mr-6">
-            <i class="fas fa-user text-4xl"></i>
+          <div
+            class="bg-gray-300 text-white w-20 h-20 sm:w-28 sm:h-28 rounded-full shadow-md flex items-center justify-center sm:mr-6">
+            <i class="fas fa-user text-3xl sm:text-4xl"></i>
           </div>
 
-          <!-- <img :src="reviews[currentReview].image" :alt="`Foto de ${reviews[currentReview].name}`"
-            class="w-28 h-28 rounded-full shadow-md mr-6" /> -->
-
           <!-- Contenido de la reseña -->
-          <div class="flex flex-col">
+          <div class="flex flex-col items-center sm:items-start mt-12 sm:mt-0">
             <!-- Nombre del cliente -->
             <p class="text-gray-800 font-bold mb-2">{{ reviews[currentReview].name }}</p>
 
@@ -154,7 +156,7 @@
             </div>
 
             <!-- Texto -->
-            <blockquote class="text-gray-600 italic leading-relaxed">
+            <blockquote class="text-gray-600 italic leading-relaxed text-center sm:text-left">
               "{{ reviews[currentReview].quote }}"
             </blockquote>
           </div>
@@ -169,6 +171,7 @@
         </div>
       </div>
     </section>
+
 
   </div>
 </template>
